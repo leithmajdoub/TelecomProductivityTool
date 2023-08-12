@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/unite")
 public class UniteRestController {
@@ -25,7 +26,7 @@ public class UniteRestController {
 
     @PostMapping("/addunite")
     @ResponseBody
-    public Unite addUnite(Unite unite) {
+    public Unite addUnite(@RequestBody Unite unite) {
         return (Unite) uniteRepository.save(unite);
     }
 

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/activite")
 public class ActiviteRestController {
@@ -24,7 +25,7 @@ public class ActiviteRestController {
 
     @PostMapping("/addactivite")
     @ResponseBody
-    public Activite addActivite(Activite activite) {
+    public Activite addActivite(@RequestBody Activite activite) {
         return activiteRepository.save(activite);
     }
 
